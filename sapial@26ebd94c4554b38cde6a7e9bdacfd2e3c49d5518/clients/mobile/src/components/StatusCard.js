@@ -32,10 +32,6 @@ export const StatusCard = ({ tweet }) => {
                         <img src={tweet.tweet.image} alt="" />
                     </div>
                     <div className="status-card-footer">                        
-                        <span className="flex-align-center"><TweetCommentIcon /> <span className="tweet-cars-icon">{tweet.tweet.comments}</span></span>
-                        <span className="flex-align-center"><TweetRetweetIcon /><span className="tweet-cars-icon">{tweet.tweet.retweets}</span></span>
-                        <span className="flex-align-center"><TweetLikeIcon /><span className="tweet-cars-icon">{tweet.tweet.likes}</span></span>
-                        <span className="flex-align-center"><TweetSendIcon /></span>
                         <span className="flex-align-center"><VoteYesIcon /></span>
                         <span className="flex-align-center"><VoteNoIcon /></span>
                     </div>

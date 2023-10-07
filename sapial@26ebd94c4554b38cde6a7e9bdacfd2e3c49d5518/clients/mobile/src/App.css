@@ -149,6 +149,12 @@ ul {
     align-items: center;
 }
 
+.flex-align-right {
+    display    : flex;
+    align-items: end;
+    padding-right: 10px;
+}
+
 .flex-space-between {
     display        : flex;
     justify-content: space-between;
