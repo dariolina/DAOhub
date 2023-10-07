@@ -6,8 +6,8 @@ import { Sapial } from "../sapial.ts";
 
 const config: IConfig = {
     name: "Alice",
-    primaryModel: "gpt-4",
-    secondaryModel: "gpt-4",
+    primaryModel: "gpt-3.5-turbo",
+    secondaryModel: "gpt-3.5-turbo",
     memory: true,
 }
 
