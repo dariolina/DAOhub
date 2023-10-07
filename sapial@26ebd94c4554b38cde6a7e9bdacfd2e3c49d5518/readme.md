@@ -187,7 +187,7 @@ To start an agent, run the following command in your terminal
 deno run --allow-all --unstable ./agents/alice.ts
 ```
 
-### Starting a client
+<!-- ### Starting a client
 In a separate terminal, start the CLI client by running
 
 ```bash
@@ -197,12 +197,12 @@ deno run --allow-all httpClient.ts
 
 To check if everything is working properly, type any prompt in the latter terminal
 
-![Checking if Sapial has been set up correctly](./assets/images/sapial_cli.gif)
+![Checking if Sapial has been set up correctly](./assets/images/sapial_cli.gif) -->
 
 ### Starting a web client
 
 Alternatively, you can start a web client to use a web interface
-To start a web client, run `yarn && yarn dev`   
+To start a web client, run `yarn && yarn dev --port 3800`   
 
 By default, the server will spin up on port 3000
 Proceed to `localhost:3000` and send a message to start interacting with AI
