@@ -128,6 +128,42 @@ const initialState = {
                 likes: '10k',
                 link: 'https://snapshot.org/#/graphprotocol.eth/proposal/QmRz29aE4TXpi9HrNbn6ZA1sRF1xEBeGbw8HxRpHZRZ4rD'
             }
+        },
+        {
+            id: 8,
+            user: {
+                name: 'Ethereum Foundation',
+                image: '/img/ethereum_logo.svg',
+                handle: '@ethereum'
+            },
+            tweet: {
+                headline: 'EIP7523: Empty accounts deprecation',
+                content: 'This EIP prohibits the state of any post-merge network from containing empty accounts. Since no empty accounts exist outside the testsuite and no new ones can be created this requirement is already achieved in practice. An explicit ban reduces technical debt going forward.',
+                image: '',
+                time: '8 days ago',
+                comments: '1',
+                retweets: '3.4k',
+                likes: '10k',
+                link: 'https://github.com/ethereum/EIPs/blob/master/EIPS/eip-7523.md'
+            }
+        },
+        {
+            id: 9,
+            user: {
+                name: 'Uniswap Foundation',
+                image: '/img/uniswap_logo.jpg',
+                handle: '@UniswapFND'
+            },
+            tweet: {
+                headline: 'Deploy Uniswap v3 on Filecoin Virtual Machine (FVM)',
+                content: 'The proposal aims to deploy Uniswap v3 on the Filecoin Virtual Machine (FVM) to leverage Filecoin\'s decentralized storage, enhance the decentralized data economy, and further Uniswap\'s multichain vision. By integrating with FVM, Uniswap aims to allow storage providers to swap $FIL tokens, earned as rewards, thus enriching Filecoin\'s data economy.',
+                image: '/img/uniswap_detail.jpeg',
+                time: '10 days ago',
+                comments: '1',
+                retweets: '3.4k',
+                likes: '10k',
+                link: 'https://gov.uniswap.org/t/deploy-uniswap-v3-on-filecoin-virtual-machine-fvm/21309/1'
+            }
         }
     ]
 

@@ -19,7 +19,7 @@ export const Status = ({ match }) => {
                     </button></Link>
 
 
-                <h1>Tweet</h1>
+                <h1>Discover</h1>
             </div>
 
             <div className="tweets">
