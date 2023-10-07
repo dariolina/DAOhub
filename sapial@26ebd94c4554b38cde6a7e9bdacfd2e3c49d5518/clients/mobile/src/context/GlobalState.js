@@ -84,7 +84,7 @@ const initialState = {
             },
             tweet: {
                 headline: 'GIP-89: Should GnosisDAO support an annual renewal for Blockscout SLA and hosting services?',
-                content: 'Blockscout continues to serve the Gnosis ecosystem with an open-source explorer for both the Gnosis mainnet and Chiado testnet instances. Blockscout hosting was originally funded in GIP 54 for mainnet and GIP 71 for the Chiado testnet. Over the past year, Blockscout has attracted and retained Gnosis users and developers, providing a valuable explorer option and needed redundancy for chain exploration. While Gnosis mainnet users can choose Gnosisscan or Blockscout for their exploration, contract verification, and API needs, Blockscout is currently the only full-featured explorer serving the Chiado execution layer. While Blockscout usage is down somewhat from its peak when it was the only explorer option for the chain, many users still prefer Blockscout.',
+                content: 'A proposal for renewing Blockscout\'s hosting services for Gnosis Chain and Chiado testnet from October 1, 2023, to October 1, 2024, covering hosting costs, feature enhancements, and priority support totaling $152,000, to be paid upfront.',
                 image: '',
                 time: '4 days ago',
                 comments: '1',
