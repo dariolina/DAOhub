@@ -5,6 +5,9 @@ import { guidelines, role } from "./runtime/prompts/prompts.ts";
 import fs from 'node:fs';
 import YAML from 'yaml';
 // import { estimateTokens } from "./runtime/utils/utils.ts";
+import axios from 'axios';
+import * as cheerio from 'cheerio';
+
 
 export class Sapial {
     public readonly name: string;
@@ -34,7 +37,13 @@ export class Sapial {
 
         // setup the proxy server
         const handler = async (request: Request) => {
-            const humanMessage = await request.text();
+            //const humanMessage = await request.text();
+            const url = 'https://polkadot.polkassembly.io/post/1937';
+            const metainput = await this.extractMeta(url);
+            await this.addPageTexttoBuffer(metainput);
+            const textinput = await this.extractText(url);
+            await this.addPageTexttoBuffer(textinput);
+            const humanMessage = "summarize the proposal"
             console.log(`Human message: ${humanMessage}`);
             const humanMessageWithContext = this.injectContext(humanMessage);
             console.log(`Human message with context: ${humanMessageWithContext}`);
@@ -45,7 +54,7 @@ export class Sapial {
             if (this.memory) {
                 this.streamToString(localReadable).then( async (AIMessage) => {
                     console.log(`AI response: ${AIMessage}`)
-                    await this.addMessagePairToBuffer(humanMessage, AIMessage);
+                    //await this.addMessagePairToBuffer(humanMessage, AIMessage);
                     this.summarizeChatHistory()
                 });
             }
@@ -106,6 +115,55 @@ export class Sapial {
         return messagePair
     }
 
+    async extractText(url: string){
+        
+            // Step 1: Acquiring the HTML Content
+            const response = await axios.get(url);
+            const htmlContent = response.data;
+            
+             // Step 2: Parsing the HTML
+             const $ = cheerio.load(htmlContent);
+            
+             // Step 3: Extracting Text
+             // This assumes you're interested in paragraph text, adjust the selector accordingly.
+             let text ='';
+             $('meta').each((index, element) => {
+                 text += $(element).text() + '\n';
+                 console.log(text);
+             });
+            return text;
+    }
+
+    async extractMeta(url: string){
+                const response = await axios.get(url);
+                const htmlContent = response.data;
+                const $ = cheerio.load(htmlContent);
+        
+                const metaInfo: { [key: string]: string } = {};
+        
+                $('head meta').each((index, element) => {
+                    const metaTag = $(element);
+                    const name = metaTag.attr('name') || metaTag.attr('property');
+                    const content = metaTag.attr('content');
+                    if (name && content) {
+                        metaInfo[name] = content;
+                    }
+                });
+        
+                return metaInfo['description'];
+    }
+
+    // adds a new message exchange to the chat buffer and logs
+    async addPageTexttoBuffer(textinput: string) {
+
+        console.log(`Added the follow message to the chat buffer: ${textinput}`);
+
+        this.chatBuffer.push(textinput.toString());
+        const timestamp = Date.now();
+        await this.store.set(['logs', timestamp], textinput);
+        return textinput
+    }
+
     // updates the chat summary with buffered messages
     summarizeChatHistory() {
 
@@ -122,6 +180,7 @@ export class Sapial {
             Make sure to retain a summary of our full conversation history.
             Ensure the summary is smaller than ${this.conversatationSummarySize} tokens
             `;
+
 
         console.log(`Summarizer prompt: ${summarizerPrompt}`);
 
