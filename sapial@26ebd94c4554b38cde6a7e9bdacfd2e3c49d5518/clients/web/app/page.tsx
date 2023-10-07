@@ -27,8 +27,8 @@ export default function Chat() {
   }, [messages]);
 
   return (
-    <div className="justify-center container md:px-24 mx-auto">
-      <div className="flex flex-col w-full gap-10 py-24" ref={messageRef}>
+    <div className="justify-center container  mx-auto">
+      <div className="flex flex-col w-full gap-10 " ref={messageRef}>
         <div className="flex-grow flex flex-col gap-3 mb-10">
           {messages.length > 0
             ? messages.map((m) => {
