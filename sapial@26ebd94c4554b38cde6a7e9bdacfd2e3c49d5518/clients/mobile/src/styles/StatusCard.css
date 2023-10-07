@@ -57,12 +57,9 @@
 }
 
 .status-card .status-card-footer {
-    padding-right: 10rem;
-    display      : flex;
-
-    justify-content: space-around;
+    display        : flex;
+    justify-content: flex-end;
     padding-top    : 1rem;
-    width          : 100%;
 }
 
 .status-card .status-card-footer svg {

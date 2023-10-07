@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/StatusCard.css';
 import { SmallAvatar } from '../images/avatars'
 import { TweetCommentIcon, TweetRetweetIcon, TweetLikeIcon, TweetSendIcon } from '../images/svg/svgs';
+import { VoteNoIcon, VoteYesIcon } from '../images/images';
 
 export const StatusCard = ({ tweet }) => {
 
@@ -30,11 +31,9 @@ export const StatusCard = ({ tweet }) => {
                     <div className="status-card-image">
                         <img src={tweet.tweet.image} alt="" />
                     </div>
-                    <div className="status-card-footer">
-                        <span className="flex-align-center"><TweetCommentIcon /> <span className="tweet-cars-icon">{tweet.tweet.comments}</span></span>
-                        <span className="flex-align-center"><TweetRetweetIcon /><span className="tweet-cars-icon">{tweet.tweet.retweets}</span></span>
-                        <span className="flex-align-center"><TweetLikeIcon /><span className="tweet-cars-icon">{tweet.tweet.likes}</span></span>
-                        <span className="flex-align-center"><TweetSendIcon /></span>
+                    <div className="status-card-footer">                        
+                        <span className="flex-align-right"><VoteYesIcon /></span>
+                        <span className="flex-align-right"><VoteNoIcon /></span>
                     </div>
                 </div>
             </div>

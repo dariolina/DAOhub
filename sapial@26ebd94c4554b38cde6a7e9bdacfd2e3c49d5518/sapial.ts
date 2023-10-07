@@ -19,7 +19,7 @@ export class Sapial {
     private bufferChat = false;
     private chatBuffer: string[] = [];
     private readonly contextSize = 16_384;
-    private readonly conversatationSummarySize = 4_096;
+    private readonly conversationSummarySize = 4_096;
     private readonly messageBufferSize = 4_096;
     private store: Deno.Kv;
 
@@ -34,16 +34,11 @@ export class Sapial {
             this.summarizeChat = true;
             this.bufferChat = true;
         }
-
         // setup the proxy server
         const handler = async (request: Request) => {
             //const humanMessage = await request.text();
-            const url = 'https://polkadot.polkassembly.io/post/1937';
-            const metainput = await this.extractMeta(url);
-            await this.addPageTexttoBuffer(metainput);
-            const textinput = await this.extractText(url);
-            await this.addPageTexttoBuffer(textinput);
-            const humanMessage = "summarize the proposal"
+            this.readProposal('https://polkadot.polkassembly.io/post/1938');
+            const humanMessage = await request.text();
             console.log(`Human message: ${humanMessage}`);
             const humanMessageWithContext = this.injectContext(humanMessage);
             console.log(`Human message with context: ${humanMessageWithContext}`);
@@ -168,17 +163,13 @@ export class Sapial {
     summarizeChatHistory() {
 
         const summarizerPrompt = `
-            You are a helpful and insightful AI text summarizer with an IQ of 125.
-            You are able to summarize long conversations betweens humans and AI assistants.
-            Your goal is to summarize our entire conversation in a way that is both accurate and concise.
-            This summary will become the long-term memory of an AI assistant.
+            You are an expert in blockchain and DAOs who summarizes proposals. Here's our conversation so far:
 
             ${this.getChatSummary()}
             ${this.getRecentMessages()}
 
-            Please extend the current summary based on our most recent messages.
-            Make sure to retain a summary of our full conversation history.
-            Ensure the summary is smaller than ${this.conversatationSummarySize} tokens
+            Retain the original proposal and extend the current summary based on our most recent messages.
+            Ensure the summary is smaller than ${this.conversationSummarySize} tokens
             `;
 
 
@@ -228,6 +219,19 @@ export class Sapial {
             ${prompt}
         `
         return message;
+    }
+
+    async readProposal(url: string) {
+        const metainput = await this.extractMeta(url);
+        await this.addPageTexttoBuffer(metainput);
+        const textinput = await this.extractText(url);
+        await this.addPageTexttoBuffer(textinput);
+        const chatBufferSize = this.chatBuffer.length;
+        
+        console.log(`Proposal: ${textinput}`)
+        this.chatSummary = textinput;
+        await this.store.set(['proposal'], textinput);
+        this.chatBuffer.splice(0, chatBufferSize);
     }
 
     // call the model API service and stream the response

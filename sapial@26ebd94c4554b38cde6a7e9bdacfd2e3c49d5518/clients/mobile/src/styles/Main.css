@@ -1,12 +1,11 @@
 /* main styles */
 .main {
-    border-left : 1px solid var(--border);
-    border-right: 1px solid var(--border);
-    ;
+    border : 1px solid var(--border);
 }
 
 .home {
     padding-left : 2.5rem;
+    padding-right: 2.5rem;
     border-bottom: 1px solid var(--border);
 }
 

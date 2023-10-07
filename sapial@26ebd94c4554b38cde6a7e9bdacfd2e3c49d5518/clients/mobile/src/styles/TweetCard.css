@@ -51,9 +51,8 @@
 }
 
 .tweet-card .tweet-card-footer {
-    padding-right  : 10rem;
     display        : flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding-top    : 1rem;
 }
 

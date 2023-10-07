@@ -31,9 +31,13 @@ export const WalletConnector = () => {
   return (
     <div>
       {address ? (
-        <span><h1>Connected: {address}</h1></span>
+        <div className="home">
+          <h1>Connected: {address}</h1>
+        </div>
       ) : (
-        <h1><a href="#" onClick={connectWallet}>Connect Wallet</a></h1>
+        <div className="home">
+          <h1><a href="#" onClick={connectWallet}>Connect Wallet</a></h1>
+        </div>
       )}
     </div>
   );

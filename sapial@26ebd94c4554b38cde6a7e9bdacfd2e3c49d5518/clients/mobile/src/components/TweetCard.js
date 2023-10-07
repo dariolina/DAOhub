@@ -3,6 +3,7 @@ import '../styles/TweetCard.css';
 import { SmallAvatar } from '../images/avatars'
 import { TweetCommentIcon, TweetRetweetIcon, TweetLikeIcon, TweetSendIcon } from '../images/svg/svgs';
 import { Link } from 'react-router-dom';
+import { VoteNoIcon, VoteYesIcon } from '../images/images';
 
 export default class TweetCard extends Component {
     tweet = this.props.tweet;
@@ -39,11 +40,9 @@ export default class TweetCard extends Component {
                             <div className="tweet-card-image">
                                 <img src={this.tweet.tweet.image} alt="" />
                             </div>
-                            <div className="tweet-card-footer">
-                                <span className="flex-align-center"><TweetCommentIcon /> <span className="tweet-cars-icon">{this.tweet.tweet.comments}</span></span>
-                                <span className="flex-align-center"><TweetRetweetIcon /><span className="tweet-cars-icon">{this.tweet.tweet.retweets}</span></span>
-                                <span className="flex-align-center"><TweetLikeIcon /><span className="tweet-cars-icon">{this.tweet.tweet.likes}</span></span>
-                                <span className="flex-align-center"><TweetSendIcon /></span>
+                            <div className="tweet-card-footer flex-align-right">
+                                <div className="flex-align-right"><VoteYesIcon /></div>
+                                <div className="flex-align-right"><VoteNoIcon /></div>
                             </div>
                         </div>
                     </div>
