@@ -12,6 +12,11 @@ export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
 
   useEffect(() => {
+    const defaultValue = "What problem or need does this DAO proposal address?";
+    const event = {
+      target: { value: defaultValue },
+    } as React.ChangeEvent<HTMLInputElement>;
+    handleInputChange(event);
     if (messageRef.current) {
       messageRef.current.scrollIntoView({
         behavior: "smooth",
@@ -22,13 +27,13 @@ export default function Chat() {
   }, [messages]);
 
   return (
-    <div className="justify-center container px-24 mx-auto">
+    <div className="justify-center container md:px-24 mx-auto">
       <div className="flex flex-col w-full gap-10 py-24" ref={messageRef}>
         <div className="flex-grow flex flex-col gap-3 mb-10">
           {messages.length > 0
             ? messages.map((m) => {
                 const additionalStyles =
-                  m.role === "user" ? "bg-neutral-200" : "";
+                  m.role === "user" ? "bg-neutral-200" : "text-white";
 
                 return (
                   <div

@@ -40,7 +40,7 @@ const AnimatedList: FC<{ items: Message[] }> = ({ items }) => {
           >
             <div
               key={item.id}
-              className={`whitespace-pre-wrap flex gap-2 p-4 text-[#16330F] leading-7`}
+              className={`whitespace-pre-wrap flex gap-2 p-4 text-white leading-7`}
             >
               <div className="min-w-6">
                 {item.role === "user" ? <UserIcon /> : <OpenAiIcon />}
