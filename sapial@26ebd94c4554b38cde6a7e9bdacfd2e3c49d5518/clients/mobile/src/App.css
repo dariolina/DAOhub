@@ -227,3 +227,27 @@ h2 {
 input:focus {
     outline: none;
 }
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  /* This class is added to start the fade out transition */
+  .popup-fade-out {
+    opacity: 0;
+  }
+
+  .popup-text {
+    color       : black;
+    font-size   : 2.25rem;
+    font-weight : 700;
+  }

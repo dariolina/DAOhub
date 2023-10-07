@@ -3,6 +3,8 @@ import '../styles/StatusCard.css';
 import { SmallAvatar } from '../images/avatars'
 import { TweetCommentIcon, TweetRetweetIcon, TweetLikeIcon, TweetSendIcon } from '../images/svg/svgs';
 import { VoteNoIcon, VoteYesIcon } from '../images/images';
+import DelayedPopupYes from './DelayedPopupYes';
+import DelayedPopupNo from './DelayedPopupNo';
 
 export const StatusCard = ({ tweet }) => {
 
@@ -32,8 +34,8 @@ export const StatusCard = ({ tweet }) => {
                         <img src={tweet.tweet.image} alt="" />
                     </div>
                     <div className="status-card-footer">                        
-                        <span className="flex-align-right"><VoteYesIcon /></span>
-                        <span className="flex-align-right"><VoteNoIcon /></span>
+                        <div className="flex-align-right" ><DelayedPopupYes /></div>
+                        <div className="flex-align-right" ><DelayedPopupNo /></div>
                     </div>
                 </div>
             </div>
