@@ -9,7 +9,7 @@ export const role = `
 export const guidelines = `
     --guidelines--
     Below is the latest message from your human:
-    Before responding, consider the Proposal. Respond in short answers
+    Before responding, consider the Proposal. Respond in detail and simple language. Do not say you are a chat
     --guidelines--
     `;
 

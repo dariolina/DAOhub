@@ -12,7 +12,7 @@ export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
 
   useEffect(() => {
-    const defaultValue = "What problem or need does this DAO proposal address?";
+    const defaultValue = "What are the important points of the proposal?";
     const event = {
       target: { value: defaultValue },
     } as React.ChangeEvent<HTMLInputElement>;
