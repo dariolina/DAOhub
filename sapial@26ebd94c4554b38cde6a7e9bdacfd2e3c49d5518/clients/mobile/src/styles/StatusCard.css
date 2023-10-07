@@ -41,6 +41,12 @@
     margin-top: .5rem;
 }
 
+.status-card-headline p {
+    font-size : 2.5rem;
+    margin-top: .5rem;
+    font-weight: bold;
+}
+
 .status-card .status-card-body .status-card-image {
     margin-top: 2rem;
 }

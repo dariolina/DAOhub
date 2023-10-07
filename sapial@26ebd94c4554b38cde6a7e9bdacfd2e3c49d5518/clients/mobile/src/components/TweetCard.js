@@ -30,6 +30,9 @@ export default class TweetCard extends Component {
                             <span className="tweet-card-time"> - {this.tweet.tweet.time}</span>
                         </div>
                         <div className="tweet-card-body">
+                            <div className="tweet-card-headline">
+                                <p className="m-0">{this.tweet.tweet.headline}</p>
+                            </div>
                             <div className="tweet-card-content">
                                 <p className="m-0">{this.tweet.tweet.content}</p>
                             </div>

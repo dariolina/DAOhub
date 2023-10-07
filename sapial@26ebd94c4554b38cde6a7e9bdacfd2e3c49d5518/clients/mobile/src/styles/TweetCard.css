@@ -35,6 +35,12 @@
     margin-top: .5rem;
 }
 
+.tweet-card-headline p {
+    font-size : 1.8rem;
+    margin-top: .5rem;
+    font-weight: bold;
+}
+
 .tweet-card .tweet-card-body .tweet-card-image {
     margin-top: 2rem;
 }
