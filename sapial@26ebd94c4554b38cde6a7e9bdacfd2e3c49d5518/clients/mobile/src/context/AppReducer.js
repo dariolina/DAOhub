@@ -13,6 +13,7 @@ export default (state, action) => {
                     handle: '@bharathravi27',
                 },
                 tweet: {
+                    headline: null,
                     content: action.payload,
                     image: null,
                     time: '10m',

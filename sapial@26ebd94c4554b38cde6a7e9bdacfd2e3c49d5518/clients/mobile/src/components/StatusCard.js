@@ -21,6 +21,9 @@ export const StatusCard = ({ tweet }) => {
 
                 </div>
                 <div className="status-card-body">
+                    <div className="status-card-headline">
+                        <p className="m-0">{tweet.tweet.headline}</p>
+                    </div>
                     <div className="status-card-content">
                         <p className="m-0">{tweet.tweet.content}</p>
                     </div>
