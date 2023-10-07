@@ -13,6 +13,7 @@ body {
     background-color: var(--body-bg);
     font-family     : 'Open Sans', sans-serif;
     padding         : 0;
+    padding-top     : 1px;
     margin          : 0;
     color           : var(--light);
 }
@@ -51,7 +52,6 @@ html {
 
 .App {
     display              : grid;
-    grid-template-columns: 2.5fr 4fr 3fr;
 }
 
 .side-nav {
@@ -203,6 +203,13 @@ ul {
 a {
     text-decoration: none;
     color          : inherit;
+}
+
+mainTitle {
+    font-size  : 4rem;
+    font-weight: 700;
+    color      : var(--light);
+    padding-left: 5px;
 }
 
 h1 {

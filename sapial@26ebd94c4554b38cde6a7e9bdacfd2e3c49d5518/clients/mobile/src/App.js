@@ -16,17 +16,10 @@ function App() {
 
         <ScrollToTop>
           <div className="App">
-            <div className="side-nav">
-              {/* <Sidebar /> */}
-            </div>
             <div className="main">
               <Route exact path="/" component={Home} />
               <Route exact path="/:id" component={Profile} />
               <Route exact path="/status/:id" component={Status} />
-            </div>
-
-            <div className="trending">
-              {/* <Trending /> */}
             </div>
           </div>
         </ScrollToTop>
