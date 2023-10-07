@@ -52,7 +52,6 @@ html {
 
 .App {
     display              : grid;
-    grid-template-columns: 2.5fr 4fr 3fr;
 }
 
 .side-nav {
