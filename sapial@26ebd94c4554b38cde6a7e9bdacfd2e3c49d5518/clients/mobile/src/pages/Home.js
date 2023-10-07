@@ -12,7 +12,7 @@ export const Home = () => {
                 <h1>DAOHub</h1>
             </div>
             <WalletConnector />
-            <NewTweet />
+            {/* <NewTweet /> */}
             <div className="tweets">
                 <TweetList />
             </div>
