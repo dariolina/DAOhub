@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import ChatBubble from "./components/ChatBubble";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -9,6 +10,9 @@ export const metadata = {
   description: "Chat GPT UI Demo",
 };
 
+import AppIcon from "./components/icons/AppIcon";
+
+
 export default function RootLayout({
   children,
 }: {
@@ -16,8 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header />
+      <body style={{ background: 'rgb(21, 32, 43)'}}>        
         <main className="w-full min-h-screen">{children}</main>
       </body>
     </html>

@@ -228,10 +228,7 @@ export class Sapial {
         await this.addPageTexttoBuffer(textinput);
         const chatBufferSize = this.chatBuffer.length;
         
-        console.log(`Proposal: ${textinput}`)
-        this.chatSummary = textinput;
-        await this.store.set(['proposal'], textinput);
-        this.chatBuffer.splice(0, chatBufferSize);
+        this.summarizeChatHistory()
     }
 
     // call the model API service and stream the response
