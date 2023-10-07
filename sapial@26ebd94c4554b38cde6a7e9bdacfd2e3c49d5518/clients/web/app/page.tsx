@@ -25,29 +25,25 @@ export default function Chat() {
       });
     }
   }, [messages]);
+  const lastMessage = messages.length > 0 ? messages[messages.length - 1] : null;
 
   return (
     <div className="justify-center container  mx-auto">
       <div className="flex flex-col w-full gap-10 " ref={messageRef}>
-        <div className="flex-grow flex flex-col gap-3 mb-10">
-          {messages.length > 0
-            ? messages.map((m) => {
-                const additionalStyles =
-                  m.role === "user" ? "bg-neutral-200" : "text-white";
-
-                return (
-                  <div
-                    key={m.id}
-                    className={`whitespace-pre-wrap flex gap-2 p-4 ${additionalStyles}`}
-                  >
-                    <div className="min-w-6">
-                      {m.role === "user" ? <UserIcon /> : <OpenAiIcon />}
-                    </div>
-                    {m.content}
-                  </div>
-                );
-              })
-            : null}
+      <div className="flex-grow flex flex-col gap-3 mb-10">
+          {lastMessage && (
+            <div
+              key={lastMessage.id}
+              className={`whitespace-pre-wrap flex gap-2 p-4 ${
+                lastMessage.role === "user" ? "text-white" : "text-white"
+              }`}
+            >
+              <div className="min-w-6">
+                {lastMessage.role === "user" ? <UserIcon /> : <OpenAiIcon />}
+              </div>
+              {lastMessage.content}
+            </div>
+          )}
         </div>
 
         <form
