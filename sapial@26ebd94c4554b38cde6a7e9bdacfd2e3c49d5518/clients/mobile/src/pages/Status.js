@@ -26,6 +26,9 @@ export const Status = ({ match }) => {
                 {/* <p>{JSON.stringify(getTweet(tweetId))}</p> */}
                 <StatusCard tweet={getTweet(tweetId)} />
             </div>
+
+
+            <iframe src="http://localhost:3800/" style={{width: '100%', height: '50vh'}} frameBorder="0"></iframe>
         </div>
     )
 }
