@@ -32,7 +32,8 @@ export const WalletConnector = () => {
     <div>
       {address ? (
         <div className="home">
-          <h1>Connected: {address}</h1>
+          <h1>Wallet Connected:</h1>
+          <h2>{address}</h2>
         </div>
       ) : (
         <div className="home">
