@@ -9,7 +9,8 @@ export const Home = () => {
     return (
         <>
             <div className="home">
-                <h1>DAOHub</h1>
+                <img src="/logo192.png" height="25px" alt="DAOhub" />
+                <mainTitle>DAOhub</mainTitle>
             </div>
             <WalletConnector />
             {/* <NewTweet /> */}
