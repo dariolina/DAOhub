@@ -32,8 +32,8 @@ export const StatusCard = ({ tweet }) => {
                         <img src={tweet.tweet.image} alt="" />
                     </div>
                     <div className="status-card-footer">                        
-                        <span className="flex-align-center"><VoteYesIcon /></span>
-                        <span className="flex-align-center"><VoteNoIcon /></span>
+                        <span className="flex-align-right"><VoteYesIcon /></span>
+                        <span className="flex-align-right"><VoteNoIcon /></span>
                     </div>
                 </div>
             </div>
