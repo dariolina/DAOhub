@@ -15,8 +15,8 @@ const initialState = {
                 content: 'Subspace Network drops knowledge bomb including mainnet date and details of the Subspace Foundation a Swiss legal entity responsible for putting protocol governance in the hands of the community. Would you like to know more?',
                 image: '/img/subspace_blog.jpg',
                 time: '1h',
-                comments: '',
-                retweets: '',
+                comments: '1',
+                retweets: '1',
                 likes: '10k',
                 link: 'https://blog.subspace.network/wen-subspace-network-update-a59669c3649c'
             }
@@ -142,7 +142,7 @@ export const GlobalProvider = ({ children }) => {
 
     function getTweet(id) {
 
-        return state.tweets.find(tweet => tweet.id === id);
+        return state.tweets.find(tweet => tweet.id == id);
     }
     function addTweet(tweets) {
         dipatch({
