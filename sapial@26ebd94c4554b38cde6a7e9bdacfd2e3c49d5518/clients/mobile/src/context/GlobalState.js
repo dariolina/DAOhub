@@ -30,7 +30,7 @@ const initialState = {
             },
             tweet: {
                 headline: '(Discussion) Polkadot Vote #1938 Polkadot Sanctuary - Retroactive Funding',
-                content: 'The proposal emphasizes the dedicated efforts and achievements of Six (Polkadot Head Ambassador) and Gabo (Polkadot Ambassador) in the APAC region from January through the submission of this proposal and continuing until the end of the current year. These efforts involved initiating and organizing a self-sustainable physical space dedicated to Polkadot and community building. Our journey began with the establishment of the Polkadot Sanctuary, the first physical hub dedicated to our ecosystem, strategically located in Denpasar, Bali, Indonesia, to serve the growing local community.',
+                content: 'The proposal discusses the contributions of Six and Gabo, Polkadot Ambassadors, in the APAC region from January until the proposal\'s submission and aims to recognize their efforts in initiating and organizing activities within the Polkadot community.',
                 image: '',
                 time: 'a day ago',
                 comments: '1',
